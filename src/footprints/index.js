@@ -4,6 +4,7 @@ module.exports = {
     choc: require('./choc'),
     chocmini: require('./chocmini'),
     diode: require('./diode'),
+    joystick: require('./joystick'),
     jstph: require('./jstph'),
     jumper: require('./jumper'),
     mx: require('./mx'),
