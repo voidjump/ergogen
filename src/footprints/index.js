@@ -7,6 +7,7 @@ module.exports = {
     joystick: require('./joystick'),
     jstph: require('./jstph'),
     jumper: require('./jumper'),
+    mcu_supermini_nrf52840: require('./mcu_supermini_nrf52840'),
     mx: require('./mx'),
     molex: require('./molex'),
     oled: require('./oled'),
