@@ -4,8 +4,13 @@ module.exports = {
       designator: 'J', // the only semi-required param, for naming components on the PCB
       // and now any other param names, with default values supplied
       // note that the default value also tells Ergogen the param's type
-    from: undefined,
-    to: undefined
+      // switch button
+        from: undefined,
+        to: undefined,
+        XREF: undefined,
+        YREF: undefined,
+        VCC: undefined,
+        GND: undefined
     },
     body: p => {
       return `
@@ -85,6 +90,7 @@ module.exports = {
             (layers "*.Cu" "*.Mask")
             (remove_unused_layers no)
             (solder_mask_margin 0.1)
+            ${p.GND}
         )
         (pad "1'" thru_hole circle
             (at 8.73 2.5)
@@ -93,6 +99,7 @@ module.exports = {
             (layers "*.Cu" "*.Mask")
             (remove_unused_layers no)
             (solder_mask_margin 0.1)
+            ${p.GND}
         )
         (pad "2" thru_hole circle
             (at 0 -8.73)
@@ -101,6 +108,7 @@ module.exports = {
             (layers "*.Cu" "*.Mask")
             (remove_unused_layers no)
             (solder_mask_margin 0.1)
+            ${p.XREF}
         )
         (pad "2'" thru_hole circle
             (at 8.73 0)
@@ -109,6 +117,7 @@ module.exports = {
             (layers "*.Cu" "*.Mask")
             (remove_unused_layers no)
             (solder_mask_margin 0.1)
+            ${p.YREF}
         )
         (pad "3" thru_hole circle
             (at -2.5 -8.73)
@@ -117,6 +126,7 @@ module.exports = {
             (layers "*.Cu" "*.Mask")
             (remove_unused_layers no)
             (solder_mask_margin 0.1)
+            ${p.VCC}
         )
         (pad "3'" thru_hole circle
             (at 8.73 -2.5)
@@ -125,6 +135,7 @@ module.exports = {
             (layers "*.Cu" "*.Mask")
             (remove_unused_layers no)
             (solder_mask_margin 0.1)
+            ${p.VCC}
         )
         (pad "a" thru_hole circle
             (at -3.25 5.75)
@@ -133,6 +144,7 @@ module.exports = {
             (layers "*.Cu" "*.Mask")
             (remove_unused_layers no)
             (solder_mask_margin 0.1)
+            ${p.from}
         )
         (pad "b" thru_hole circle
             (at 3.25 5.75)
@@ -141,6 +153,7 @@ module.exports = {
             (layers "*.Cu" "*.Mask")
             (remove_unused_layers no)
             (solder_mask_margin 0.1)
+            ${p.from}
         )
         (pad "c" thru_hole circle
             (at -3.25 10.25)
@@ -149,6 +162,7 @@ module.exports = {
             (layers "*.Cu" "*.Mask")
             (remove_unused_layers no)
             (solder_mask_margin 0.1)
+            ${p.to}
         )
         (pad "d" thru_hole circle
             (at 3.25 10.25)
@@ -157,6 +171,7 @@ module.exports = {
             (layers "*.Cu" "*.Mask")
             (remove_unused_layers no)
             (solder_mask_margin 0.1)
+            ${p.to}
         )
     )
       `
