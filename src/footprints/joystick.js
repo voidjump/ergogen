@@ -66,7 +66,7 @@ module.exports = {
                 (type default)
             )
             (fill none)
-            (layer "*.Fab")
+            (layer "F.Fab")
         )
         (pad "" thru_hole circle
             (at -6.325 -5)
